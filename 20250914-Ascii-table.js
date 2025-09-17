@@ -1,4 +1,7 @@
 // Recreate an ASCII Table: https://code.golf/ascii-table#python
+/* The Challenge here is that utilizing String.fromCharCode, and the
+subsequent order of ASCII in the target table, is not in the correct order.
+The X and Y axis of the graph is inverted */
 
 console.log('   2 3 4 5 6 7\n', '-'.repeat(14))
 for (let i = 32; i < 48; i++) {
@@ -11,8 +14,8 @@ for (let i = 32; i < 48; i++) {
 }
 
 // ------------------------ //
-// Code Golfed to 232 bytes
-((w, i, j) => {w(`   2 3 4 5 6 7\n--------------\n`);for (i = 32; i < 48; i++) {w((i - 32).toString(16).toUpperCase() + ': ');for (j = i; j < i + 96; j += 16) w(String.fromCharCode(j) + ' ');w('\n')}})(x => process.stdout.write(x));
+// Code Golfed to 200 bytes
+((w,i,j)=>{w(`   2 3 4 5 6 7\n--------------\n`);for(i=32;i<48;i++){w((i-32).toString(16).toUpperCase()+': ');for(j=i;j<i+96;j+=16)w(String.fromCharCode(j)+' ');w('\n')}})(x=>process.stdout.write(x));
 
 /* Outputs
    2 3 4 5 6 7
